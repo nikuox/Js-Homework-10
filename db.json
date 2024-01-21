@@ -1,14 +1,18 @@
 {
-    "users":[{
-        "id":1,
-        "fname":"nikoo",
-        "age":25
+  "users": [
+    {
+      "id": 1,
+      "fname": "nikoo",
+      "age": 25
     },
     {
-        "id":2,
-        "fname":"sam",
-        "age":21
+      "id": 2,
+      "fname": "sam",
+      "age": 21
     }
-]
-
+  ],
+  "posts": [
+    { "id": "1", "title": "a title" },
+    { "id": "2", "title": "another title" }
+  ]
 }
