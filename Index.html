@@ -24,10 +24,10 @@
       };
 
       $.ajax(settings).done(function (response) {
-        response.forEach((item) => {
-          $("#show").append(`<div><h1>Name: ${item.fname}</h1>
-      <p>Age: ${item.age}</p></div>`);
-        });
+        for (let i = 0; i < response.length; i++) {
+          $("#show").append(`<div><h1>Name: ${response[i].fname}</h1>
+      <p>Age: ${response[i].age}</p></div>`);
+        }
       });
     </script>
   </body>
