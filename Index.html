@@ -6,6 +6,11 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="show">
+      <h1></h1>
+      <p></p>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -13,13 +18,16 @@
     ></script>
     <script>
       var settings = {
-        url: "https://127.0.0.1:3000/users",
+        url: "http://127.0.0.1:3000/users",
         method: "GET",
         timeout: 0,
       };
 
       $.ajax(settings).done(function (response) {
-        console.log(response);
+        response.forEach((item) => {
+          $("#show").append(`<div><h1>Name: ${item.fname}</h1>
+      <p>Age: ${item.age}</p></div>`);
+        });
       });
     </script>
   </body>
