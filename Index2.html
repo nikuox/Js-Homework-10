@@ -6,10 +6,9 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="show">
-      <h1></h1>
-      <p></p>
-    </div>
+    <div id="show"></div>
+    <input type="text" />
+    <button>Add Data</button>
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -17,17 +16,19 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      var settings = {
-        url: "http://127.0.0.1:3000/users",
-        method: "GET",
-        timeout: 0,
-      };
+      $("button").click(function () {
+        let id = $("input").val();
 
-      $.ajax(settings).done(function (response) {
-        for (let i = 0; i < response.length; i++) {
+        var settings = {
+          url: `http://127.0.0.1:3000/users/${id}`,
+          method: "GET",
+          timeout: 0,
+        };
+
+        $.ajax(settings).done(function (response) {
           $("#show").append(`<div><h1>Name: ${response.fname}</h1>
       <p>Age: ${response.age}</p></div>`);
-        }
+        });
       });
     </script>
   </body>
