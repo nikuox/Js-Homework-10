@@ -26,6 +26,7 @@
         };
 
         $.ajax(settings).done(function (response) {
+          $("#box").html("");
           $("#show").append(`<div><h1>Name: ${response.fname}</h1>
       <p>Age: ${response.age}</p></div>`);
         });
